@@ -326,6 +326,7 @@ nav ul li a{
         .cards{
             display: grid;
             grid-template-columns: repeat(2,1fr);
+            padding: 0px 20px;
             gap: 20px;
             width: 100%;
         }

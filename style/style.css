@@ -51,7 +51,7 @@ body{
 .container{
     width: 100%;
     max-width: 1100px;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 nav{
     /* background: gray; */
@@ -125,13 +125,18 @@ nav ul li a{
     display: flex;
     margin-top: 100px;
     gap: 90px;
-    /* background-color: red; */
-    /* height: 100vh; */
 }
 .feature-text,
-.feature-image{
+.feature-img{
     width: 50%;
-    /* height: 100%; */
+}
+.feature-img>img{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.feature-image{
+    position: relative;
     z-index: -1;
 }
 .feature-details-title{
@@ -158,9 +163,13 @@ nav ul li a{
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    margin: 0 auto;
-    margin-top: -200px;
-    /* z-index: 10; */
+    margin: -120px 0px 0px -50px;
+    z-index: 1;
+}
+
+/* facts section style start */
+.facts{
+    margin-top: 100px;
 }
 .cards{
     display: flex;
@@ -190,6 +199,9 @@ nav ul li a{
     transform: scale(1.1);
     border: 1px solid hotpink;
 }
+
+/* facts section style start */
+
 /* Sponsore section style start */
 .Sponspor{
     margin-top: 150px;
@@ -197,41 +209,35 @@ nav ul li a{
 .sponsor-info{
     text-align: center;
 }
-.company-logo{
-    width: 100%;
+.company-logos{
     display: flex;
     justify-content: space-evenly;
-    margin: 50px 0px;
+    align-items: center;
 }
 .company-logo>img{
     filter: grayscale(100%);
     width: 100px;
 }
-.footer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100px;
-    background: #FFF4E7;
-    text-align: center;
-    margin-top: 120px;
-}
-/* Contact  */
+/* Sponsore section style End */
+
+/* Contact Section Start */
 .contact{
     text-align: center;
     background-color: #FFF4E7;
     padding: 50px 0px;
 }
+.contact-item,
 .row{
     display: flex;
     justify-content: space-around;
     width: 100%;
     gap: 30px;
-    margin-top: 50px;
 }
-.contact-title,
+.contact-icon{
+    margin-bottom: 50px;
+}
 .contact-sub-title{
-    margin-top: 25px;
+    margin: 25px 0px 50px;
 }
 
 .fa{
@@ -239,7 +245,8 @@ nav ul li a{
     color: var(--primary-btn);
     margin-bottom: 20px;
 }
-.row input,textarea{
+.contact-item input,
+.row input,textarea{ 
     width: 100%;
     padding: 20px;
     border-radius: 30px;
@@ -253,3 +260,87 @@ nav ul li a{
 .contact-form{
     padding: 0px 30px;
 }
+/* Contact Section End */
+
+/* Footer Section  */
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background: #FFF4E7;
+    text-align: center;
+    margin-top: 120px;
+}
+
+/* Footer section end  */
+
+/* -------------------------------------
+                Media Quary
+    ------------------------------------- */
+    @media (max-width:768px){
+
+        .primary-btn{
+            background-color: green;
+        }
+        nav{
+            flex-direction: column;
+        }
+        .logo{
+            margin-bottom: 20px;
+        }
+        .feature{
+            flex-direction: column;
+        }
+        .photos,
+        .feature-info{
+            width: 100%;
+        }
+        .feature-info{
+            text-align: center;
+        }
+        .feature-details{
+            flex-direction: column-reverse;
+        }
+        .feature-details-title{
+            border-left: none;
+        }
+        .feature-text,
+        .feature-img{
+        width: 100%;
+        }
+        .popup{
+            margin: 10px auto;
+            
+        }
+        .cards{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 20px;
+            width: 100%;
+        }
+        .company-logo{
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            justify-content: center;
+        }
+        .row{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin: 0 auto;
+            text-align: center;
+        }
+        .title{
+            text-align: center;
+        }
+        .description{
+            text-align: center;
+            padding: 0px 10px;
+        }
+        .feature-description{
+            text-align: left;
+        }
+        
+    }

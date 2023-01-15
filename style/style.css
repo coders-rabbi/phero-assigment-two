@@ -120,7 +120,9 @@ nav ul li a{
 /* ------------------------------
         feature-details         
     ----------------------------- */
-
+.extra-color{
+    color: var(--description-text);
+}
 .feature-details{
     display: flex;
     margin-top: 100px;
@@ -148,10 +150,8 @@ nav ul li a{
 }
 .box{
     width: 100%;
-    /* height: 150px; */
-    /* background: red; */
-    padding: 30px 40px 30px 30px;
-    margin-bottom: 20px;
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 15px;
     border-radius: 10px;
     box-shadow: 1px 1px 1px 4px rgba(0, 0, 0, 0.02);
 }
@@ -211,12 +211,21 @@ nav ul li a{
 }
 .company-logos{
     display: flex;
-    justify-content: space-evenly;
+    gap: 40px;
+    width: 100%;
+}
+.company-logo{
+    height: 100px;
+    width: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    margin: 0 auto;
 }
 .company-logo>img{
-    filter: grayscale(100%);
     width: 100px;
+    filter: grayscale(100%);
 }
 /* Sponsore section style End */
 
@@ -279,10 +288,10 @@ nav ul li a{
 /* -------------------------------------
                 Media Quary
     ------------------------------------- */
-    @media (max-width:768px){
+    @media only screen and (max-width:768px){
 
         .primary-btn{
-            background-color: green;
+            background-color: var(--primary-btn);
         }
         nav{
             flex-direction: column;
@@ -320,7 +329,7 @@ nav ul li a{
             gap: 20px;
             width: 100%;
         }
-        .company-logo{
+        .company-logos{
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(2,1fr);
@@ -342,5 +351,37 @@ nav ul li a{
         .feature-description{
             text-align: left;
         }
-        
+    }
+
+    @media only screen and (max-width:576px){
+        .photos{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            gap: 25px;
+        }
+        .cards{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            padding: 0px 100px;
+            gap: 20px;
+            width: 100%;
+        }
+        .row{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            margin: 0 auto;
+            text-align: center;
+        }
+        .contact-item{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            gap: 0px;
+        }
+        .contact-item input,textarea{
+            margin-top: 0px;
+            margin-bottom: 40px;
+        }
+        .contact-title{
+            margin-top: 20px;
+        }
     }
